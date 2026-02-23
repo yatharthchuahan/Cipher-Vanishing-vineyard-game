@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.thevanishingvineyard">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity3"
+            android:exported="true" />
+        <activity
+            android:name=".GuideActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PlayActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DialerGrapevineActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CalculatorGrapevine"
+            android:exported="false" />
+        <activity
+            android:name=".SandyChatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".JamesChatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".GrapevineMessageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TomChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VideoPlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FullScreenImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TimChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhoneGrapevineActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DeskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GrapevinePhoneActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UnknownChatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DialerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ContactDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CalculatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhoneScreenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainGame1"
+            android:exported="true" />
+        <activity
+            android:name=".DetailsPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginPage2"
+            android:exported="true" />
+        <activity
+            android:name=".LoginPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity1"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SplashActivity2"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity3"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

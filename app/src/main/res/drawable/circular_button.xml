@@ -1,0 +1,14 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#80000000"/> <!-- Semi-transparent black -->
+            <corners android:radius="30dp"/> <!-- Adjust radius for the circle effect -->
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/>
+            <corners android:radius="30dp"/>
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
+    android:padding="16dp">
+
+    <!-- Top bar -->
+
+    <!-- Chat list -->
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Back button -->
+
+        <!-- Heading -->
+
+        <!-- WiFi and battery images -->
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="1dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/messages_heading"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="113dp"
+            android:layout_marginEnd="106dp"
+            android:text="Messages"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/wifi_image"
+            android:layout_width="58dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-20dp"
+            android:contentDescription="WiFi"
+            android:src="@drawable/wifi" />
+
+        <ImageView
+            android:id="@+id/battery_image"
+            android:layout_width="29dp"
+            android:layout_height="23dp"
+            android:layout_marginRight="-20dp"
+            android:layout_toLeftOf="@id/wifi_image"
+            android:contentDescription="Battery"
+            android:src="@drawable/battery" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_bar"
+        android:orientation="vertical">
+
+        <!-- Space between heading and chat buttons -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- Chat 1 -->
+        <!-- Add icon -->
+        <Button
+            android:id="@+id/chat_1_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button_transparent"
+            android:padding="8dp"
+            android:text="Unknown"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <!-- Chat 2 -->
+        <Button
+            android:id="@+id/chat_2_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tim"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button_transparent" /> <!-- Add icon -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <!-- Chat 3 -->
+        <Button
+            android:id="@+id/chat_3_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TOM SMITH"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button_transparent" /> <!-- Add icon -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <!-- Chat 4 -->
+        <Button
+            android:id="@+id/chat_4_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bob Smith"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button_transparent"/> <!-- Add icon -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <!-- Chat 5 -->
+        <Button
+            android:id="@+id/chat_5_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alice Johnson"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button_transparent" /> <!-- Add icon -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <!-- Chat 6 -->
+        <Button
+            android:id="@+id/chat_6_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mike Brown"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button_transparent" /> <!-- Add icon -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <!-- Chat 7 -->
+        <Button
+            android:id="@+id/chat_7_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Emily Davis"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button_transparent" /> <!-- Add icon -->
+
+    </LinearLayout>
+
+</RelativeLayout>

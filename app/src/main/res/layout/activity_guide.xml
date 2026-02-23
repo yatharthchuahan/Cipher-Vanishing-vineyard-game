@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="50dp"
+    tools:context=".GuideActivity">
+
+    <TextView
+        android:id="@+id/txtTitleGuide"
+        android:layout_width="175dp"
+        android:layout_height="68dp"
+        android:gravity="center"
+        android:text="HOW TO PLAY"
+        android:textColor="@color/title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnBackGuide"
+        android:layout_width="108dp"
+        android:layout_height="68dp"
+        android:backgroundTint="@color/btn"
+        android:gravity="center"
+        android:text="Back"
+        android:textSize="24sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtGuide1"
+        android:layout_width="297dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="PRESS THE MOVE BUTTON TO MOVE ALL TILES TO THE DIRECTION YOU DISIRE"
+        android:textColor="@color/title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtGuide2"
+        android:layout_width="318dp"
+        android:layout_height="138dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="SCORE WILL BE CALCULATED BY THE TILES YOU MERGE SO SCORING 300 OR ABOVE WILL TAKE YOU TO THE VAULT"
+        android:textColor="@color/title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtGuide1" />
+
+    <TextView
+        android:id="@+id/txtGuide3"
+        android:layout_width="268dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="HAVE FUN IN REACHING TO THE VAULT"
+        android:textColor="@color/title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtGuide2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

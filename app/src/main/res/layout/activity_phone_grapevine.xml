@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper3"> <!-- Replace with your background -->
+
+
+    <!-- WiFi Icon -->
+
+
+    <!-- Battery Icon -->
+
+    <!-- Time TextView -->
+
+    <TextView
+        android:id="@+id/time_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="00:00"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <!-- Date TextView -->
+    <TextView
+        android:id="@+id/date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_text_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Mon, Jan 1"
+        android:textSize="18sp"
+        android:textColor="@android:color/white" />
+
+    <!-- App Buttons -->
+
+    <ImageButton
+        android:id="@+id/browser_button"
+        android:layout_width="107dp"
+        android:layout_height="92dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="41dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/calculator"
+        android:src="@drawable/calculator" />
+
+    <ImageButton
+        android:id="@+id/phone_button"
+        android:layout_width="105dp"
+        android:layout_height="93dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="295dp"
+        android:layout_marginBottom="34dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/phone"
+        android:src="@drawable/phone" />
+
+    <ImageButton
+        android:id="@+id/messages_button"
+        android:layout_width="109dp"
+        android:layout_height="90dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="146dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/messages"
+        android:src="@drawable/messages" />
+
+    <ImageButton
+        android:id="@+id/contacts_button"
+        android:layout_width="108dp"
+        android:layout_height="95dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="166dp"
+        android:layout_marginBottom="38dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/contacts"
+        android:src="@drawable/contacts" />
+
+    <ImageButton
+        android:id="@+id/settings_button"
+        android:layout_width="104dp"
+        android:layout_height="85dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="150dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/settings"
+        android:src="@drawable/settings" />
+
+    <ImageButton
+        android:id="@+id/notes_button"
+        android:layout_width="111dp"
+        android:layout_height="90dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="285dp"
+        android:layout_marginBottom="145dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/notes"
+        android:src="@drawable/notes" />
+</RelativeLayout>

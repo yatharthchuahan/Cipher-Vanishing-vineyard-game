@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#131313</color>
+    <color name="orangeBackground">#FFA726</color> <!-- Lighter orange -->
+    <color name="orangeButton">#FB8C00</color> <!-- Medium orange -->
+    <color name="orangeAccent">#EF6C00</color>
+    <color name="bg_text">#F7F9EC</color>
+    <color name="btn">#B7AC9E</color>
+    <color name="tile">#D5CDC0</color>
+    <color name="no2">#FBF8CB</color>
+    <color name="no4">#FFCFD2</color>
+    <color name="no8">#CEBAEF</color>
+    <color name="no16">#8FDBF3</color>
+    <color name="no32">#98F5E2</color>
+    <color name="no64">#BAFBC1</color>
+    <color name="title">#736E62</color>
+</resources><!-- Darker orange -->
+
+

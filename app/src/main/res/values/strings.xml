@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">The Vanishing Vineyard</string>
+    <string name="phone">phone\n</string>
+    <string name="messages">messages\n</string>
+    <string name="settings">settings</string>
+    <string name="notes">notes\n</string>
+    <string name="calculator">calculator</string>
+    <string name="contacts">contacts\n</string>
+    <string name="done_chat_with_unknown">Done Chat with Unknown</string>
+    <string name="done_chat_with_tim">Done Chat with Tim</string>
+    <string name="what_next">What next?</string>
+    <string name="unlock_the_phone">unlock_the_phone</string>
+    <string name="full_screen_image_desc" />
+    <string name="item_image_desc" />
+    <string name="phone_button_description">phone_button_description</string>
+    <string name="Done" />
+    <string name="DONE">DONE</string>
+    <string name="check_inbox">inbox\n</string>
+    <string name="new_mission">mission\n</string>
+    <string name="new_voicemail">voicemail\n</string>
+    <string name="system_update">update\n</string>
+    <string name="new_clue">clue\n\n</string>
+    <string name="backup_data">data</string>
+    <string name="decrypt_message">messages\n</string>
+    <string name="locate_key">key\n</string>
+    <string name="track_signal">signal\n</string>
+    <string name="connect_vpn">vpn</string>
+    <string name="final_warning">warning</string>
+</resources>
