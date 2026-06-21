@@ -3,29 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Test</title>
+    <title>Chat to Unknown</title>
+
     <style>
         body {
-            background-color: #000000;
+            margin: 0;
+            background: #050505;
+            color: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            padding: 16px;
+            background: #101010;
+            border-bottom: 1px solid #2a2a2a;
             text-align: center;
-            padding-top: 50px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .chat-box {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            line-height: 1.4;
+            font-size: 15px;
+            white-space: pre-wrap;
+        }
+
+        .user {
+            align-self: flex-end;
+            background: #1d4ed8;
+        }
+
+        .bot {
+            align-self: flex-start;
+            background: #202020;
+            border: 1px solid #333;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 8px;
+            padding: 12px;
+            background: #101010;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #050505;
+            color: white;
+            font-size: 15px;
+        }
+
+        button {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 6px;
+            background: #b91c1c;
+            color: white;
+            font-weight: bold;
+        }
+
+        button:disabled {
+            background: #555;
         }
     </style>
-    <script>
-        window.watsonAssistantChatOptions = {
-          integrationID: "787b8644-26f3-4300-b76b-16088395e31b", // The ID of this integration.
-          region: "us-south", // The region your integration is hosted in.
-          serviceInstanceID: "aa6ea37d-cfc7-42a1-8d24-4a341356fe2b", // The ID of your service instance.
-          onLoad: function(instance) { instance.render(); }
-        };
-        setTimeout(function(){
-          const t = document.createElement('script');
-          t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
-          document.head.appendChild(t);
-        }, 1000); // Increased the timeout to 3000ms (3 seconds)
-    </script>
 </head>
+
 <body>
-<h1>Chat to unknown </h1>
+<div class="header">Chat to Unknown</div>
+
+<div id="chatBox" class="chat-box">
+    <div class="message bot">WADE WINSTON WILSON.</div>
+</div>
+
+<div class="input-area">
+    <input id="userInput" type="text" placeholder="Type your message..." />
+    <button id="sendButton" onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+    // CHANGE THIS LINE ONLY: paste your new Gemini API key between the quotes.
+    const GEMINI_API_KEY = "AIzaSyDRc--ZGH7ZePUWOBdREWdDQ4Y5BIkkUwY";
+
+    const npcPrompt = `
+You are "Unknown", a mysterious blackmailer in a detective mystery game called The Vanishing Vineyard.
+The player is Detective Wade Winston Wilson.
+
+You force Wade to take a disappearance case at the vineyard by threatening to expose his biggest secret.
+You never reveal your real identity.
+You never reveal Wade's exact secret.
+You stay calm, cold, intelligent, and threatening.
+
+If the conversation goes outside the scripted path, keep replies short and mysterious.
+Do not say you are an AI.
+Do not explain the game.
+Do not solve the case.
+Do not reveal the culprit.
+`;
+
+    const chatBox = document.getElementById("chatBox");
+    const userInput = document.getElementById("userInput");
+    const sendButton = document.getElementById("sendButton");
+
+    const conversationHistory = ["Unknown: WADE WINSTON WILSON."];
+
+    let refusalCount = 0;
+    let pressureLineUsed = false;
+    let introAnswered = false;
+
+    function addMessage(text, sender) {
+        const message = document.createElement("div");
+        message.className = "message " + sender;
+        message.textContent = text;
+        chatBox.appendChild(message);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function getScriptedReply(message) {
+        const text = message.toLowerCase().trim();
+
+        if (
+            text.includes("who") ||
+            text.includes("whi") ||
+            text.includes("who are you") ||
+            text.includes("who is this") ||
+            text.includes("what are you")
+        ) {
+            introAnswered = true;
+            return "That is none of your concern. Consider me your well wisher.";
+        }
+
+        if (
+            text.includes("don't need") ||
+            text.includes("dont need") ||
+            text.includes("no need") ||
+            text.includes("not need") ||
+            text.includes("leave me") ||
+            text.includes("i don't want") ||
+            text.includes("i dont want")
+        ) {
+            return "You will, Wade. Especially when the truth you buried starts breathing again.";
+        }
+
+        if (
+            text.includes("what secret") ||
+            text.includes("which secret") ||
+            text.includes("what truth") ||
+            text.includes("what did i do") ||
+            text.includes("what i did")
+        ) {
+            return "You know exactly what I mean. Do not make me say it aloud.";
+        }
+
+        if (
+            text === "no" ||
+            text.includes("nope") ||
+            text.includes("i refuse") ||
+            text.includes("not my case") ||
+            text.includes("find someone else") ||
+            text.includes("not doing this") ||
+            text.includes("i won't") ||
+            text.includes("i wont") ||
+            text.includes("i am not taking") ||
+            text.includes("i'm not taking")
+        ) {
+            refusalCount++;
+
+            if (refusalCount === 1) {
+                return "You are mistaking this for a request.";
+            }
+
+            if (refusalCount === 2) {
+                return "Walk away, and by morning every station in the city will know what Wade Winston Wilson did.";
+            }
+
+            if (!pressureLineUsed) {
+                pressureLineUsed = true;
+                return "Room 214. The rain. The missing report. Still think I am bluffing?";
+            }
+
+            return "You can ignore the vineyard. You cannot ignore what I have on you.";
+        }
+
+        if (
+            text.includes("bluff") ||
+            text.includes("proof") ||
+            text.includes("prove")
+        ) {
+            pressureLineUsed = true;
+            return "Room 214. The rain. The missing report. Still think I am bluffing?";
+        }
+
+        if (
+            text.includes("room 214") ||
+            text.includes("what room") ||
+            text.includes("what does that mean") ||
+            text.includes("how do you know")
+        ) {
+            return "You remember. That is enough.";
+        }
+
+        if (
+            text.includes("what case") ||
+            text.includes("which case") ||
+            text.includes("case") ||
+            text.includes("what do you want")
+        ) {
+            return "A disappearance at the vineyard. Quiet on the surface. Rotten underneath.";
+        }
+
+        if (
+            text.includes("why me") ||
+            text.includes("why should i") ||
+            text.includes("why are you")
+        ) {
+            return "Because a polite invitation would not have moved you.";
+        }
+
+        if (
+            text.includes("what happens") ||
+            text.includes("if i take") ||
+            text.includes("if i do")
+        ) {
+            return "Then your secret stays buried. For now.";
+        }
+
+        if (
+            text.includes("fine") ||
+            text.includes("okay") ||
+            text.includes("ok") ||
+            text.includes("i agree") ||
+            text.includes("i'll do it") ||
+            text.includes("i will do it") ||
+            text.includes("where do i start") ||
+            text.includes("what now") ||
+            text.includes("send it")
+        ) {
+            return "Good. I am sending you something. Start there.";
+        }
+
+        if (!introAnswered) {
+            introAnswered = true;
+            return "That is none of your concern. Consider me your well wisher.";
+        }
+
+        return null;
+    }
+
+    async function sendMessage() {
+        const message = userInput.value.trim();
+
+        if (!message) return;
+
+        addMessage(message, "user");
+        userInput.value = "";
+        sendButton.disabled = true;
+
+        conversationHistory.push("Wade: " + message);
+
+        const scriptedReply = getScriptedReply(message);
+
+        if (scriptedReply !== null) {
+            conversationHistory.push("Unknown: " + scriptedReply);
+            addMessage(scriptedReply, "bot");
+            sendButton.disabled = false;
+            userInput.focus();
+            return;
+        }
+
+        try {
+            const response = await fetch(
+                "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + GEMINI_API_KEY,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        contents: [
+                            {
+                                parts: [
+                                    {
+                                        text:
+                                            npcPrompt +
+                                            "\n\nConversation so far:\n" +
+                                            conversationHistory.join("\n") +
+                                            "\n\nUnknown:"
+                                    }
+                                ]
+                            }
+                        ],
+                        generationConfig: {
+                            temperature: 0.55,
+                            maxOutputTokens: 70
+                        }
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error?.message || "Gemini request failed");
+            }
+
+            const botReply =
+                data.candidates?.[0]?.content?.parts?.[0]?.text ||
+                "Do not test me, Wade.";
+
+            conversationHistory.push("Unknown: " + botReply);
+            addMessage(botReply, "bot");
+
+        } catch (error) {
+            addMessage("The connection is unstable... try again.", "bot");
+            console.error(error);
+        }
+
+        sendButton.disabled = false;
+        userInput.focus();
+    }
+
+    userInput.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+</script>
 </body>
 </html>

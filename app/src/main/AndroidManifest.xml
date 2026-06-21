@@ -40,7 +40,7 @@
             android:exported="true" />
         <activity
             android:name=".TomChatActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".VideoPlayerActivity"
             android:exported="false" />
@@ -49,7 +49,7 @@
             android:exported="false" />
         <activity
             android:name=".TimChatActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".NotificationActivity"
             android:exported="false" />
